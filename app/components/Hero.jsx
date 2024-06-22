@@ -1,8 +1,10 @@
 import React from "react";
+import Navbar from "../shared/Navbar";
 
 const Hero = () => {
   return (
-    <section className="dark:bg-gray-100 dark:text-gray-800">
+    <section className="bg-gray-100 text-gray-800 px-16">
+      <Navbar />
       <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
         <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
           <h1 className="text-4xl lg:text-5xl font-bold leading-none sm:text-6xl">
@@ -17,14 +19,14 @@ const Hero = () => {
             <a
               rel="noopener noreferrer"
               href="#"
-              className="px-4 lg:px-8 py-3 text-md font-semibold rounded dark:bg-violet-600 dark:text-gray-50"
+              className="px-4 lg:px-8 py-3 text-md font-semibold rounded bg-violet-600"
             >
               Suspendisse
             </a>
             <a
               rel="noopener noreferrer"
               href="#"
-              className="px-8 py-3 text-md font-semibold border rounded dark:border-gray-800"
+              className="px-8 py-3 text-md font-semibold border rounded border-gray-800"
             >
               Malesuada
             </a>
