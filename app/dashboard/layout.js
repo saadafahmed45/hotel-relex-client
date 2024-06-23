@@ -6,9 +6,11 @@ export default function DashboardLayout({
   return (
     <section className="px-8 flex">
       {/* Include shared UI here e.g. a header or sidebar */}
-      <Sidebar />
+      <div className="w-[20%] ">
+        <Sidebar />
+      </div>
 
-      <div className="p-8">{children}</div>
+      <div className="p-4 w-screen bg-slate-200 ">{children}</div>
     </section>
   );
 }

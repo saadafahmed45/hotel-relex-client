@@ -42,6 +42,7 @@ const Navbar = () => {
               About
             </Link>
           </li>
+
           <li className="flex">
             <Link
               rel="noopener noreferrer"
@@ -58,6 +59,15 @@ const Navbar = () => {
               className="flex items-center px-4 -mb-1 border-b-2 dark:border-"
             >
               Login
+            </Link>
+          </li>
+          <li className="flex">
+            <Link
+              rel="noopener noreferrer"
+              href={"/dashboard"}
+              className="flex items-center px-4 -mb-1 border-b-2 dark:border-"
+            >
+              Dashboard
             </Link>
           </li>
         </ul>

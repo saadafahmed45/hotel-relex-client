@@ -4,7 +4,7 @@ import RoomsCard from "../components/RoomsCard";
 
 const Rooms = () => {
   const hotelData = hotels;
-  console.log(hotelData);
+  // console.log(hotelData);
   return (
     <div>
       <section className="py-6 px-8 sm:py-12 lg:px-16 dark:bg-gray-100 dark:text-gray-800">
