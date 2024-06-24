@@ -2,14 +2,14 @@ import Link from "next/link";
 import React from "react";
 
 const RoomsCard = ({ item }) => {
-  const { hotel_id, name, image, location, price_per_night } = item;
+  const { _id, name, image, location, price } = item;
 
   return (
     <div>
       <article className="flex flex-col dark:bg-gray-50 shadow-lg">
         <Link
           rel="noopener noreferrer"
-          href={`/rooms/${hotel_id}`}
+          href={`/rooms/${_id}`}
           aria-label="Te nulla oportere reprimique his dolorum"
         >
           <img
@@ -36,7 +36,7 @@ const RoomsCard = ({ item }) => {
           </h3>
           <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-600">
             <span>June 1, 2020</span>
-            <span>${price_per_night}</span>
+            <span>${price}</span>
           </div>
         </div>
       </article>

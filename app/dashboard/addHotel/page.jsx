@@ -1,8 +1,18 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 const AddRoom = () => {
-  // state
+  const [amenities, setAmenities] = useState({
+    freeWiFi: false,
+    rooftopBar: false,
+    conferenceRooms: false,
+    gym: false,
+    swimmingPool: false,
+    seaView: false,
+  });
+
+  //
+
   const handleProductAdded = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -14,7 +24,15 @@ const AddRoom = () => {
     const country = form.country.value;
     const zip_postal = form.zip_postal.value;
     const price = form.price.value;
-    const intPrice = parseInt(price); // Corrected parsing
+    const intPrice = parseInt(price);
+
+    const selectedAmenities = [];
+    for (const [key, value] of Object.entries(amenities)) {
+      if (value) {
+        selectedAmenities.push(key.replace(/([A-Z])/g, " $1").trim());
+      }
+    }
+
     const roomsDetails = {
       name,
       description,
@@ -25,9 +43,10 @@ const AddRoom = () => {
         country,
         zip_postal,
       },
-
       price: intPrice,
-    }; // Changed intPrice to price
+      amenities: selectedAmenities,
+    };
+
     console.log(roomsDetails);
 
     // data post
@@ -46,10 +65,17 @@ const AddRoom = () => {
       })
       .then((data) => {
         console.log("send", data);
+        alert("Added The hotel");
+        form.reset(); // Reset the form
       })
       .catch((error) => {
         console.error("Error adding product:", error);
       });
+  };
+
+  const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+    setAmenities((prev) => ({ ...prev, [name]: checked }));
   };
 
   return (
@@ -58,7 +84,7 @@ const AddRoom = () => {
         <form
           onSubmit={handleProductAdded}
           noValidate=""
-          className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow bg-gray-50"
+          className="container w-full max-w-xl p-8 mx-auto space-y-6   rounded-md shadow bg-gray-50"
         >
           <h2 className="w-full text-3xl font-bold leading-tight">Add hotel</h2>
           {/* Name */}
@@ -73,9 +99,9 @@ const AddRoom = () => {
               className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
             />
           </div>
-          {/* location  */}
+          {/* Location */}
           <div>
-            <label htmlFor="name" className="block mb-1 ml-1">
+            <label htmlFor="address" className="block mb-1 ml-1">
               Address
             </label>
             <input
@@ -85,21 +111,21 @@ const AddRoom = () => {
               className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
             />
           </div>
-          {/* city */}
+          {/* City */}
           <div>
-            <label htmlFor="zip" className="text-sm">
+            <label htmlFor="city" className="block mb-1 ml-1">
               City
             </label>
             <input
               type="text"
               name="city"
-              placeholder=" city"
+              placeholder="city"
               className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
             />
           </div>
-          {/* country */}
+          {/* Country */}
           <div>
-            <label htmlFor="zip" className="text-sm">
+            <label htmlFor="country" className="block mb-1 ml-1">
               Country
             </label>
             <input
@@ -109,23 +135,22 @@ const AddRoom = () => {
               className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
             />
           </div>
-          {/* zip */}
+          {/* ZIP / Postal */}
           <div>
-            <label htmlFor="zip" className="text-sm">
+            <label htmlFor="zip_postal" className="block mb-1 ml-1">
               ZIP / Postal
             </label>
             <input
               type="text"
               name="zip_postal"
-              placeholder=" ZIP / Postal"
+              placeholder="ZIP / Postal"
               className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
             />
           </div>
-
-          {/* image */}
+          {/* Image */}
           <div>
-            <label htmlFor="link" className="block mb-1 ml-1">
-              image link
+            <label htmlFor="image" className="block mb-1 ml-1">
+              Image Link
             </label>
             <input
               type="text"
@@ -134,19 +159,20 @@ const AddRoom = () => {
               className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
             />
           </div>
-
+          {/* Price */}
           <div>
             <label htmlFor="price" className="block mb-1 ml-1">
-              price
+              Price
             </label>
             <input
               name="price"
               type="number"
-              placeholder="price per night "
+              placeholder="price per night"
               required=""
               className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
             />
           </div>
+          {/* Description */}
           <div>
             <label htmlFor="description" className="block mb-1 ml-1">
               Description
@@ -157,6 +183,65 @@ const AddRoom = () => {
               placeholder="description..."
               className="block w-full p-2 rounded autoexpand focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
             ></textarea>
+          </div>
+          {/* Amenities */}
+          <div>
+            <h3 className="block mb-1 ml-1">Amenities</h3>
+            <label className="inline-flex items-center">
+              <input
+                type="checkbox"
+                name="freeWiFi"
+                className="form-checkbox"
+                onChange={handleCheckboxChange}
+              />
+              <span className="ml-2">Free Wi-Fi</span>
+            </label>
+            <label className="inline-flex items-center">
+              <input
+                type="checkbox"
+                name="rooftopBar"
+                className="form-checkbox"
+                onChange={handleCheckboxChange}
+              />
+              <span className="ml-2">Rooftop Bar</span>
+            </label>
+
+            <label className="inline-flex items-center">
+              <input
+                type="checkbox"
+                name="conferenceRooms"
+                className="form-checkbox"
+                onChange={handleCheckboxChange}
+              />
+              <span className="ml-2">Conference Rooms</span>
+            </label>
+            <label className="inline-flex items-center">
+              <input
+                type="checkbox"
+                name="gym"
+                className="form-checkbox"
+                onChange={handleCheckboxChange}
+              />
+              <span className="ml-2">Gym</span>
+            </label>
+            <label className="inline-flex items-center">
+              <input
+                type="checkbox"
+                name="swimmingPool"
+                className="form-checkbox"
+                onChange={handleCheckboxChange}
+              />
+              <span className="ml-2"> Swimming Pool</span>
+            </label>
+            <label className="inline-flex items-center">
+              <input
+                type="checkbox"
+                name="seaView"
+                className="form-checkbox"
+                onChange={handleCheckboxChange}
+              />
+              <span className="ml-2">Sea view</span>
+            </label>
           </div>
           <div>
             <button

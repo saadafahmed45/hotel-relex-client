@@ -1,10 +1,14 @@
 import React from "react";
 import { hotels } from "../api/hotelApi";
 import RoomsCard from "../components/RoomsCard";
+import { hotelsData } from "../api/api";
 
-const Rooms = () => {
-  const hotelData = hotels;
+const Rooms = async () => {
+  // const hotelData = hotels;
   // console.log(hotelData);
+  const hotelData = await hotelsData();
+  // console.log(data);
+
   return (
     <div>
       <section className="py-6 px-8 sm:py-12 lg:px-16 dark:bg-gray-100 dark:text-gray-800">
@@ -17,7 +21,7 @@ const Rooms = () => {
           </div>
           <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
             {hotelData.map((item) => (
-              <RoomsCard item={item} key={item.hotel_id} />
+              <RoomsCard item={item} key={item._id} />
             ))}
           </div>
         </div>
