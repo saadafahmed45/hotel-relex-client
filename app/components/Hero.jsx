@@ -32,7 +32,7 @@ const Hero = () => {
             </a>
           </div>
         </div>
-        <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-96 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+        <div className="flex items-center justify-center p-6 mt-2 lg:mt-0 h-96 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
           <img
             src="https://images.pexels.com/photos/161758/governor-s-mansion-montgomery-alabama-grand-staircase-161758.jpeg"
             alt=""
