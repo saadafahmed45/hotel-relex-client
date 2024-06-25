@@ -1,4 +1,5 @@
 "use client";
+import { hotelsData } from "@/app/api/api";
 import React, { useState } from "react";
 
 const AddRoom = () => {
@@ -50,7 +51,7 @@ const AddRoom = () => {
     console.log(roomsDetails);
 
     // data post
-    fetch("http://localhost:5000/hotels", {
+    fetch(hotelsData, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

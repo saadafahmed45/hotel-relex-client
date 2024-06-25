@@ -28,25 +28,48 @@ const RoomDetails = ({ params }) => {
     fetchData();
   }, []); // Empty dependency array ensures this effect runs only once after the initial render.
 
-  console.log(data);
+  // console.log(data);
 
   //  booking
   const handleBooking = (e) => {
     e.preventDefault();
     const form = event.target;
-    const name = form.name.value;
+    // const name = form.name.value;
     const checkIn = form.checkIn.value;
+    const checkOut = form.checkOut.value;
     const bookingData = {
-      name: data.name,
-      price: data.price,
+      hotel: data,
       checkIn,
+      checkOut,
     };
     console.log(bookingData);
+
+    // data post
+    fetch("https://hotel-relex-server.onrender.com/booking", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(bookingData),
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log("booking", data);
+        alert("booking The hotel");
+        form.reset(); // Reset the form
+      })
+      .catch((error) => {
+        console.error("Error adding product:", error);
+      });
   };
   return (
-    <div className="px-4 lg:px-24 space-y-6 ">
+    <div className="px-4 lg:px-24 py-16 space-y-6 ">
       {/* breadcrumb */}
-      <Button>Click me</Button>
 
       <nav
         aria-label="breadcrumb"
@@ -165,12 +188,34 @@ const RoomDetails = ({ params }) => {
       </div>
 
       {/* date  */}
-      <form onSubmit={handleBooking}>
-        <h3>checking Date</h3>
-        <input type="date" name="checkIn" id="checkIn" />
+      <form
+        onSubmit={handleBooking}
+        className="flex flex-col justify-around  lg:flex lg:flex-row place-items-center w-full"
+      >
+        <div className="flex justify-between flex-col lg:flex-row  px-2 items-center gap-4 lg:gap-8  ">
+          <div>
+            <h3>Check In Date</h3>
+            <input
+              type="date"
+              name="checkIn"
+              id="checkIn"
+              className="px-2 py-2  shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 bg-orange-100 focus:ring-violet-600 ring-violet-600"
+            />
+          </div>
+          change
+          <div>
+            <h3>Check Out Date </h3>
+            <input
+              type="date"
+              name="checkOut"
+              id="checkOut"
+              className="px-2 py-2  shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 bg-orange-100 focus:ring-violet-600 ring-violet-600"
+            />
+          </div>
+        </div>
         <button
           type="submit"
-          className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 bg-violet-600 focus:ring-violet-600 hover:ring-violet-600 text-gray-50"
+          className="w-1/3 mt-8 px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 bg-violet-600 focus:ring-violet-600 hover:ring-violet-600 text-gray-50"
         >
           Book
         </button>

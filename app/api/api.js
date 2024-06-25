@@ -1,4 +1,4 @@
-const hotelApiUrl = `http://localhost:5000/hotels`;
+const hotelApiUrl = `https://hotel-relex-server.onrender.com/hotels`;
 
 export async function hotelsData() {
   const res = await fetch(hotelApiUrl, {
