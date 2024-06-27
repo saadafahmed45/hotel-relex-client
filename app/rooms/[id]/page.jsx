@@ -12,7 +12,9 @@ const RoomDetails = ({ params }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/hotels/${id}`);
+        const response = await fetch(
+          `https://hotel-relex-server.onrender.com/hotels/${id}`
+        );
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

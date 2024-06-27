@@ -1,4 +1,4 @@
-const hotelApiUrl = `https://hotel-relex-server.onrender.com/hotels`;
+export const hotelApiUrl = `https://hotel-relex-server.onrender.com/hotels`;
 
 export async function hotelsData() {
   const res = await fetch(hotelApiUrl, {
@@ -9,8 +9,8 @@ export async function hotelsData() {
   return res.json();
 }
 
-export async function hotelDetails() {
-  const res = await fetch("http://localhost:5000/hotels", {
+export async function bookingApi() {
+  const res = await fetch("https://hotel-relex-server.onrender.com/booking", {
     next: {
       revalidate: 5,
     },
