@@ -1,4 +1,4 @@
-export const hotelApiUrl = `https://server-snowy-one.vercel.app/hotels`;
+export const hotelApiUrl = `https://hotel-relex-server.vercel.app/hotels`;
 
 export async function hotelsData() {
   const res = await fetch(hotelApiUrl, {
@@ -10,7 +10,7 @@ export async function hotelsData() {
 }
 
 export async function bookingApi() {
-  const res = await fetch("https://server-snowy-one.vercel.app/booking", {
+  const res = await fetch("https://hotel-relex-server.vercel.app/booking", {
     next: {
       revalidate: 5,
     },

@@ -13,7 +13,7 @@ const RoomDetails = ({ params }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://server-snowy-one.vercel.app/hotels/${id}`
+          `https://hotel-relex-server.vercel.app/hotels/${id}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
