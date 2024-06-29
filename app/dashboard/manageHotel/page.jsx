@@ -9,14 +9,14 @@ const ManageHotel = () => {
   const [currenthotel, setCurrenthotel] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/hotels")
+    fetch("https://server-snowy-one.vercel.app/hotels")
       .then((res) => res.json())
       .then((data) => sethotels(data));
   }, []);
   console.log(hotels);
 
   const handleDelete = (_id) => {
-    fetch(`http://localhost:5000/hotels/${_id}`, {
+    fetch(`https://server-snowy-one.vercel.app/hotels/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -34,7 +34,7 @@ const ManageHotel = () => {
   };
 
   const handleUpdate = (updatedHotel) => {
-    fetch(`http://localhost:5000/hotels/${updatedHotel._id}`, {
+    fetch(`https://server-snowy-one.vercel.app/hotels/${updatedHotel._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
