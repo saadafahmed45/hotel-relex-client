@@ -10,7 +10,7 @@ export default function DashboardLayout({
         <Sidebar />
       </div>
 
-      <div className="p-4 w-screen bg-slate-200 ">{children}</div>
+      <div className="p-4 w-screen ">{children}</div>
     </section>
   );
 }
