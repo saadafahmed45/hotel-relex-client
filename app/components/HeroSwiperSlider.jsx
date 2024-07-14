@@ -33,7 +33,7 @@ const HeroSwiperSlider = () => {
               </div></SwiperSlide>
       </Swiper>
         </section>
-     <div className="absolute left-0 bottom-0 right-0  z-50 w-full">
+     <div className="absolute left-0 bottom-[300px] lg:bottom-0 right-0  z-50 w-full">
         <QuickBooking />
      </div>
     </div>
