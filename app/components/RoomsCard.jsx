@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 
 const RoomsCard = ({ item }) => {
   const { _id, name, image, price, description } = item;
@@ -18,8 +17,22 @@ const RoomsCard = ({ item }) => {
             src={image}
           />
         </Link>
-        <div className="flex flex-col flex-1 p-6 space-y-3">
-          <h3 className="flex-1 py-2 text-2xl font-semibold leading-snug">
+
+        <div className="flex flex-col flex-1 p-6">
+          <a
+            rel="noopener noreferrer"
+            href="#"
+            aria-label="Te nulla oportere reprimique his dolorum"
+          ></a>
+          <a
+            rel="noopener noreferrer"
+            href="#"
+            className="text-xs tracking-wider uppercase hover:underline dark:text-violet-600"
+          >
+            {/* {location.city} */}
+          </a>
+          <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
+
             {name}
           </h3>
           <p>

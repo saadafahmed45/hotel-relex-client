@@ -1,6 +1,19 @@
+import { Libre_Caslon_Display } from "next/font/google";
+import HeroSwiperSlider from "./HeroSwiperSlider";
+
+
+
+const myFont = Libre_Caslon_Display  ({
+  weight: '400',
+  subsets: ['latin'],
+})
+
 const Hero = () => {
   return (
-    <section className="bg-gray-100 text-gray-800 px-2 lg:px-16">
+    <>
+      <HeroSwiperSlider />
+    <section className={`bg-gray-100 text-gray-800 px-1 lg:px-16 ${myFont.className}`}>
+
       {/* <Navbar /> */}
       <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
         <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
@@ -37,7 +50,8 @@ const Hero = () => {
           />
         </div>
       </div>
-    </section>
+      </section>
+      </>
   );
 };
 
