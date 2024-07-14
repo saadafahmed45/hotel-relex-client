@@ -16,7 +16,7 @@ const HeroSwiperSlider = () => {
            
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
            <SwiperSlide>
-              <div className='h-screen'>
+              <div className=''>
                      <img className='object-cover select-none'
                         src="https://images.pexels.com/photos/210604/pexels-photo-210604.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                         
@@ -24,11 +24,11 @@ const HeroSwiperSlider = () => {
               </div>
         </SwiperSlide>
            <SwiperSlide>
-              <div className='h-screen '>
+              <div className=' '>
                  <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="img" />
               </div></SwiperSlide>
            <SwiperSlide>
-             <div className='h-screen'>
+             <div className=''>
                  <img src="https://images.pexels.com/photos/210265/pexels-photo-210265.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
               </div></SwiperSlide>
       </Swiper>
