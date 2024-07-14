@@ -59,7 +59,7 @@ const Navbar = () => {
           </svg>
           Relex
         </Link>
-        <ul className=" space-x-3 md:flex">
+        <ul className="hidden space-x-3 md:flex">
           <li className="">
             <Link
               rel="noopener noreferrer"
