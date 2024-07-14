@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        'about-image': "url('https://images.pexels.com/photos/269063/pexels-photo-269063.jpeg')",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

@@ -91,7 +91,7 @@ const RoomDetails = ({ params }) => {
     // console.log("set", bookData);
 
     // data post
-    fetch("https://hotel-relex-server.onrender.com/booking", {
+    fetch("https://hotel-relex-server-git-main-saadafahmed45s-projects.vercel.app/booking", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

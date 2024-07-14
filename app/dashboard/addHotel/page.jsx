@@ -44,7 +44,7 @@ const AddRoom = () => {
     console.log(roomsDetails);
 
     // data post
-    fetch("https://hotel-relex-server.onrender.com/hotels", {
+    fetch("https://hotel-relex-server-git-main-saadafahmed45s-projects.vercel.app/hotels", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -60,7 +60,7 @@ const AddRoom = () => {
       .then((data) => {
         // console.log("send", data);
         Swal.fire({
-          position: "top-center",
+          position: "center",
           icon: "success",
           title: "Your Room has been Added",
           showConfirmButton: false,
