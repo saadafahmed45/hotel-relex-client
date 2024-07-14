@@ -115,7 +115,7 @@ const Navbar = () => {
         </button>
       </div>
       {isDropdownVisible && (
-        <div ref={dropdownRef} className="md:hidden absolute top-16 left-0 w-full bg-white/60 backdrop-blur-xl  border-t">
+        <div ref={dropdownRef} className="md:hidden absolute top-16 left-0 w-full bg-white/70 backdrop-blur-2xl  border-t">
           <ul className="flex flex-col space-y-2 p-4">
             <li>
               <Link
