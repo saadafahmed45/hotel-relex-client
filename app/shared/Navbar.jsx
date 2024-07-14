@@ -37,7 +37,7 @@ const Navbar = () => {
   }, [lastScrollY]);
   
   return (
-    <header className={`first-letter: fixed top-0 z-50 w-full border-b-2 bg-white/50 backdrop-blur-2xl px-1 transition-transform duration-300 md:px-5 lg:px-20 ${
+    <header className={`first-letter: fixed px-2 top-0 z-50 w-full border-b-2 bg-white/50 backdrop-blur-2xl px-1 transition-transform duration-300 md:px-5 lg:px-20 ${
           !isVisible ? "-translate-y-full" : "translate-y-0"
         }`}>
       <div className="container flex justify-between items-center h-16 mx-auto">
