@@ -24,7 +24,7 @@ const HeroSwiperSlider = () => {
               </div>
         </SwiperSlide>
            <SwiperSlide>
-              <div className='h-[80vh] lg:h-screen '>
+              <div className='h-screen '>
                  <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="img" />
               </div></SwiperSlide>
            <SwiperSlide>
