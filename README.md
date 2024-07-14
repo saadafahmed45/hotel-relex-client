@@ -8,6 +8,7 @@ Securely make reservations and payments.
 Access exclusive deals and promotions.
 Whether you’re planning a business trip, a family vacation, or a romantic getaway, Hotel Relex promises an unforgettable stay. Book your perfect room today and enjoy the finest hospitality.
 
+### Live site : https://hotel-relex.vercel.app/
 
 ## Contributors
   [![Star on GitHub](https://img.shields.io/github/stars/saadafahmed45/hotel-relex-client.svg?style=social)](https://github.com/saadafahmed45/hotel-relex-client/stargazers)
