@@ -34,6 +34,9 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backdropBlur: {
+        'xl': '20px',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

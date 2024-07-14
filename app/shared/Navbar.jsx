@@ -131,7 +131,9 @@ const Navbar = () => {
           </svg>
         </button>
       </div>
+      {/* Mobile Menu */}
       {isDropdownVisible && (
+<<<<<<< HEAD
         <div
           ref={dropdownRef}
           className="md:hidden absolute top-16 left-0 w-full bg-white/50 text-slate-900 backdrop-blur-lg border-t"
@@ -200,6 +202,64 @@ const Navbar = () => {
           </ul>
         </div>
       )}
+=======
+  <div ref={dropdownRef} className="md:hidden absolute top-16 left-0 w-full border-t">
+    <ul className="flex flex-col space-y-2 p-4 bg-white/50 backdrop-blur-xl">
+      <li>
+        <Link
+          rel="noopener noreferrer"
+          href={"/"}
+          className={`block px-4 py-2 ${pathname === "/" ? "text-violet-600" : ""}`}
+          onClick={() => setIsDropdownVisible(false)}
+        >
+          Home
+        </Link>
+      </li>
+      <li>
+        <Link
+          rel="noopener noreferrer"
+          href={"/about"}
+          className={`block px-4 py-2 ${pathname === "/about" ? "text-violet-600" : ""}`}
+          onClick={() => setIsDropdownVisible(false)}
+        >
+          About
+        </Link>
+      </li>
+      <li>
+        <Link
+          rel="noopener noreferrer"
+          href={"/rooms"}
+          className={`block px-4 py-2 ${pathname === "/rooms" ? "text-violet-600" : ""}`}
+          onClick={() => setIsDropdownVisible(false)}
+        >
+          Room
+        </Link>
+      </li>
+      <li>
+        <Link
+          rel="noopener noreferrer"
+          href={"/login"}
+          className={`block px-4 py-2 ${pathname === "/login" ? "text-violet-600" : ""}`}
+          onClick={() => setIsDropdownVisible(false)}
+        >
+          Login
+        </Link>
+      </li>
+      <li>
+        <Link
+          rel="noopener noreferrer"
+          href={"/dashboard"}
+          className={`block px-4 py-2 ${pathname === "/dashboard" ? "text-violet-600" : ""}`}
+          onClick={() => setIsDropdownVisible(false)}
+        >
+          Dashboard
+        </Link>
+      </li>
+    </ul>
+  </div>
+)}
+
+>>>>>>> 2c0bfdc1bfc91acd136bbb815644366488f11f7d
     </header>
   );
 };
