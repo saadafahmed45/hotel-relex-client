@@ -10,14 +10,14 @@ const ManageHotel = () => {
   const [currenthotel, setCurrenthotel] = useState(null);
 
   useEffect(() => {
-    fetch("https://hotel-relex-server-git-main-saadafahmed45s-projects.vercel.app/hotels")
+    fetch("https://hotel-relex-server.onrender.com/hotels")
       .then((res) => res.json())
       .then((data) => sethotels(data));
   }, []);
   console.log(hotels);
 
   const handleDelete = (_id) => {
-    fetch(`https://hotel-relex-server-git-main-saadafahmed45s-projects.vercel.app/hotels/${_id}`, {
+    fetch(`https://hotel-relex-server.onrender.com/hotels/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -42,7 +42,7 @@ const ManageHotel = () => {
 
   const handleUpdate = (updatedHotel) => {
     fetch(
-      `https://hotel-relex-server-git-main-saadafahmed45s-projects.vercel.app/hotels/${updatedHotel._id}`,
+      `https://hotel-relex-server.onrender.com/hotels/${updatedHotel._id}`,
       {
         method: "PUT",
         headers: {

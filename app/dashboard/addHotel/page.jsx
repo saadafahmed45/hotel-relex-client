@@ -44,7 +44,7 @@ const AddRoom = () => {
     console.log(roomsDetails);
 
     // data post
-    fetch("https://hotel-relex-server-git-main-saadafahmed45s-projects.vercel.app/hotels", {
+    fetch("https://hotel-relex-server.onrender.com/hotels", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
