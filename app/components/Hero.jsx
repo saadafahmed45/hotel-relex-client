@@ -1,5 +1,6 @@
 import { Libre_Caslon_Display } from "next/font/google";
 import HeroSwiperSlider from "./HeroSwiperSlider";
+import './HeroSwiperSlider.css';
 
 
 

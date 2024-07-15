@@ -7,7 +7,8 @@ import HeroSwiperSlider from "./components/HeroSwiperSlider";
 export default function Home() {
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
+       <HeroSwiperSlider />
       <Rooms />
       <Testimonial />
     </>

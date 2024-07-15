@@ -60,7 +60,7 @@ const AddRoom = () => {
       .then((data) => {
         // console.log("send", data);
         Swal.fire({
-          position: "top-center",
+          position: "center",
           icon: "success",
           title: "Your Room has been Added",
           showConfirmButton: false,

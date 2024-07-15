@@ -19,7 +19,7 @@ const Rooms = async () => {
               choose your rooms usu at, duo te agam soluta mucius.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
             {hotelData.map((item) => (
               <RoomsCard item={item} key={item._id} />
             ))}
