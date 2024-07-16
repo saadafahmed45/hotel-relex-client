@@ -84,37 +84,37 @@ const AddRoom = () => {
         <form
           onSubmit={handleProductAdded}
           noValidate=""
-          className="container w-full max-w-xl p-8 mx-auto space-y-6   rounded-md shadow bg-gray-50"
+          className="container mx-auto w-full max-w-xl space-y-6 rounded-md bg-gray-50 p-8 shadow"
         >
           <h2 className="w-full text-3xl font-bold leading-tight">Add hotel</h2>
           {/* Name */}
           <div>
-            <label htmlFor="name" className="block mb-1 ml-1">
+            <label htmlFor="name" className="mb-1 ml-1 block">
               Room Name
             </label>
             <input
               type="text"
               name="name"
               placeholder="hotel name"
-              className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
+              className="block w-full rounded bg-gray-100 p-2 focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-25"
             />
           </div>
 
           {/* Image */}
           <div>
-            <label htmlFor="image" className="block mb-1 ml-1">
+            <label htmlFor="image" className="mb-1 ml-1 block">
               Room Image Link
             </label>
             <input
               type="text"
               name="image"
               placeholder="hotel image"
-              className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
+              className="block w-full rounded bg-gray-100 p-2 focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-25"
             />
           </div>
           {/* Price */}
           <div>
-            <label htmlFor="price" className="block mb-1 ml-1">
+            <label htmlFor="price" className="mb-1 ml-1 block">
               Price
             </label>
             <input
@@ -122,24 +122,24 @@ const AddRoom = () => {
               type="number"
               placeholder="price per night"
               required=""
-              className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
+              className="block w-full rounded bg-gray-100 p-2 focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-25"
             />
           </div>
           {/* Description */}
           <div>
-            <label htmlFor="description" className="block mb-1 ml-1">
+            <label htmlFor="description" className="mb-1 ml-1 block">
               Description
             </label>
             <textarea
               name="description"
               type="text"
               placeholder="description..."
-              className="block w-full p-2 h-36 rounded autoexpand focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
+              className="autoexpand block h-36 w-full rounded bg-gray-100 p-2 focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-25"
             ></textarea>
           </div>
           {/* Amenities */}
-          <div className="space-x-2 space-y-2 ">
-            <h3 className="block mb-1 ml-1">ROOM FACILITIES</h3>
+          <div className="space-x-2 space-y-2">
+            <h3 className="mb-1 ml-1 block">ROOM FACILITIES</h3>
             <label className="inline-flex items-center">
               <input
                 type="checkbox"
@@ -199,7 +199,7 @@ const AddRoom = () => {
           <div>
             <button
               type="submit"
-              className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 bg-violet-600 focus:ring-violet-600 hover:ring-violet-600 text-gray-50"
+              className="w-full rounded bg-violet-600 px-4 py-2 font-bold text-gray-50 shadow hover:ring hover:ring-violet-600 focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-50"
             >
               Book
             </button>
