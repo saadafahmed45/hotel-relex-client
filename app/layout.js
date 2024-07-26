@@ -10,6 +10,8 @@ export const metadata = {
   description: "booking beutiful Hotel for day and night",
 };
 
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

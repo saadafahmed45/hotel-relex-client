@@ -13,12 +13,12 @@ const RoomsCard = ({ item }) => {
         >
           <img
             alt=""
-            className="object-cover w-full h-52 bg-gray-500"
+            className="h-52 w-full bg-gray-500 object-cover"
             src={image}
           />
         </Link>
 
-        <div className="flex flex-col flex-1 p-6">
+        <div className="flex flex-1 flex-col p-6">
           <a
             rel="noopener noreferrer"
             href="#"
@@ -27,25 +27,24 @@ const RoomsCard = ({ item }) => {
           <a
             rel="noopener noreferrer"
             href="#"
-            className="text-xs tracking-wider uppercase hover:underline dark:text-violet-600"
+            className="text-xs uppercase tracking-wider hover:underline dark:text-violet-600"
           >
             {/* {location.city} */}
           </a>
           <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
-
             {name}
           </h3>
           <p>
             {" "}
             {description.slice(0, 105)}....{" "}
-            <Link className="text-blue-600 text-sm" href={`/rooms/${_id}`}>
+            <Link className="text-sm text-blue-600" href={`/rooms/${_id}`}>
               See full
-            </Link>{" "}
+            </Link>
           </p>
-          <div className="flex justify-start gap-8 items-center">
+          <div className="flex items-center justify-start gap-8">
             <div>
               <Link
-                className="bg-violet-600 hover:bg-slate-800 text-white text-lg py-3 px-5 "
+                className="bg-violet-600 px-5 py-3 text-lg text-white hover:bg-slate-800"
                 href={`/rooms/${_id}`}
               >
                 Book

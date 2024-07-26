@@ -41,16 +41,16 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full border-b-2 bg-white/50 backdrop-blur-2xl px-1 transition-transform duration-300 md:px-5 lg:px-20 ${
+      className={`fixed top-0 z-50 w-full border-b-2 bg-white/50 px-1 backdrop-blur-2xl transition-transform duration-300 md:px-5 lg:px-20 ${
         !isVisible ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      <div className="container flex justify-between items-center h-16 mx-auto">
+      <div className="container mx-auto flex h-16 items-center justify-between">
         <Link
           rel="noopener noreferrer"
           href={"/"}
           aria-label="Back to homepage"
-          className="flex items-center p-2 font-semibold text-2xl"
+          className="flex items-center p-2 text-2xl font-semibold"
         >
           Hotel Relex
         </Link>
@@ -120,7 +120,7 @@ const Navbar = () => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="w-6 h-6"
+            className="h-6 w-6"
           >
             <path
               strokeLinecap="round"
@@ -135,70 +135,72 @@ const Navbar = () => {
       {isDropdownVisible && (
         <div
           ref={dropdownRef}
-          className="md:hidden absolute top-16 left-0 w-full bg-white/50 text-slate-900 backdrop-blur-lg border-t"
+          className="absolute left-0 top-16 w-full border-t md:hidden"
         >
-          <ul className="flex flex-col space-y-2 p-4">
-            <li>
-              <Link
-                rel="noopener noreferrer"
-                href={"/"}
-                className={`block px-4 py-2 ${
-                  pathname === "/" ? "text-violet-600" : ""
-                }`}
-                onClick={() => setIsDropdownVisible(false)}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                rel="noopener noreferrer"
-                href={"/about"}
-                className={`block px-4 py-2 ${
-                  pathname === "/about" ? "text-violet-600" : ""
-                }`}
-                onClick={() => setIsDropdownVisible(false)}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                rel="noopener noreferrer"
-                href={"/rooms"}
-                className={`block px-4 py-2 ${
-                  pathname === "/rooms" ? "text-violet-600" : ""
-                }`}
-                onClick={() => setIsDropdownVisible(false)}
-              >
-                Room
-              </Link>
-            </li>
-            <li>
-              <Link
-                rel="noopener noreferrer"
-                href={"/login"}
-                className={`block px-4 py-2 ${
-                  pathname === "/login" ? "text-violet-600" : ""
-                }`}
-                onClick={() => setIsDropdownVisible(false)}
-              >
-                Login
-              </Link>
-            </li>
-            <li>
-              <Link
-                rel="noopener noreferrer"
-                href={"/dashboard"}
-                className={`block px-4 py-2 ${
-                  pathname === "/dashboard" ? "text-violet-600" : ""
-                }`}
-                onClick={() => setIsDropdownVisible(false)}
-              >
-                Dashboard
-              </Link>
-            </li>
-          </ul>
+          <div className="block bg-white/50 text-slate-900 backdrop-blur-lg">
+            <ul className="flex flex-col space-y-2 p-4">
+              <li>
+                <Link
+                  rel="noopener noreferrer"
+                  href={"/"}
+                  className={`block px-4 py-2 ${
+                    pathname === "/" ? "text-violet-600" : ""
+                  }`}
+                  onClick={() => setIsDropdownVisible(false)}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  rel="noopener noreferrer"
+                  href={"/about"}
+                  className={`block px-4 py-2 ${
+                    pathname === "/about" ? "text-violet-600" : ""
+                  }`}
+                  onClick={() => setIsDropdownVisible(false)}
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  rel="noopener noreferrer"
+                  href={"/rooms"}
+                  className={`block px-4 py-2 ${
+                    pathname === "/rooms" ? "text-violet-600" : ""
+                  }`}
+                  onClick={() => setIsDropdownVisible(false)}
+                >
+                  Room
+                </Link>
+              </li>
+              <li>
+                <Link
+                  rel="noopener noreferrer"
+                  href={"/login"}
+                  className={`block px-4 py-2 ${
+                    pathname === "/login" ? "text-violet-600" : ""
+                  }`}
+                  onClick={() => setIsDropdownVisible(false)}
+                >
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Link
+                  rel="noopener noreferrer"
+                  href={"/dashboard"}
+                  className={`block px-4 py-2 ${
+                    pathname === "/dashboard" ? "text-violet-600" : ""
+                  }`}
+                  onClick={() => setIsDropdownVisible(false)}
+                >
+                  Dashboard
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       )}
     </header>
