@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { jsPDF } from "jspdf";
 import Swal from "sweetalert2";
-import Image from "next/image";
 const RoomDetails = ({ params }) => {
   const id = params.id;
   const [data, setData] = useState(null);
@@ -244,9 +243,7 @@ const RoomDetails = ({ params }) => {
             href="#"
             className="mx-auto block max-w-sm gap-3 bg-gray-50 sm:max-w-full lg:grid lg:grid-cols-12"
           >
-            <Image
-              width={50}
-              height={50}
+            <img
               src={data?.image}
               alt=""
               className="h-64 w-full rounded bg-gray-500 object-cover sm:h-96 lg:col-span-7"

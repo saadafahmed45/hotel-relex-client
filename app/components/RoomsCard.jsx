@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const RoomsCard = ({ item }) => {
@@ -12,9 +11,7 @@ const RoomsCard = ({ item }) => {
           href={`/rooms/${_id}`}
           aria-label="Te nulla oportere reprimique his dolorum"
         >
-          <Image
-            width={50}
-            height={50}
+          <img
             alt=""
             className="h-52 w-full bg-gray-500 object-cover"
             src={image}
