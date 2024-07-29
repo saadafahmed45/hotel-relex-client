@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <>
       {/* <Hero /> */}
-       <HeroSwiperSlider />
+      <HeroSwiperSlider />
       <Rooms />
-      <Testimonial />
+      {/* <Testimonial /> */}
     </>
   );
 }

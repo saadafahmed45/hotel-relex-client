@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import QuickBooking from "./QuickBooking";
+import Image from "next/image";
 
 const HeroSwiperSlider = () => {
   return (
@@ -17,7 +18,9 @@ const HeroSwiperSlider = () => {
         >
           <SwiperSlide>
             <div>
-              <img
+              <Image
+                width={50}
+                height={50}
                 className="h-screen w-full select-none object-cover"
                 src="https://images.pexels.com/photos/210604/pexels-photo-210604.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
               />
@@ -25,16 +28,20 @@ const HeroSwiperSlider = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div className="">
-              <img
+              <Image
+                width={50}
+                height={50}
                 className="h-screen w-full select-none object-cover"
                 src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                alt="img"
+                alt="Image"
               />
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="">
-              <img
+              <Image
+                width={50}
+                height={50}
                 className="h-screen w-full select-none object-cover"
                 src="https://images.pexels.com/photos/210265/pexels-photo-210265.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt=""

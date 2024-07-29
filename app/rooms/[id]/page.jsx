@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { jsPDF } from "jspdf";
 import Swal from "sweetalert2";
+import Image from "next/image";
 const RoomDetails = ({ params }) => {
   const id = params.id;
   const [data, setData] = useState(null);
@@ -26,7 +27,7 @@ const RoomDetails = ({ params }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://hotel-relex-server.onrender.com/hotels/${id}`
+          `https://hotel-relex-server.onrender.com/hotels/${id}`,
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -132,17 +133,17 @@ const RoomDetails = ({ params }) => {
     doc.save("booking-details.pdf");
   };
   return (
-    <div className="px-4 lg:px-24 py-16 space-y-6 ">
+    <div className="space-y-6 px-4 py-16 lg:px-24">
       {/* breadcrumb */}
       <button
         onClick={generatePDF}
-        className="w-1/3 mt-8 px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 bg-violet-600 focus:ring-violet-600 hover:ring-violet-600 text-gray-50"
+        className="mt-8 w-1/3 rounded bg-violet-600 px-4 py-2 font-bold text-gray-50 shadow hover:ring hover:ring-violet-600 focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-50"
       >
         Generate PDF
       </button>
       <nav
         aria-label="breadcrumb"
-        className="w-full p-4 bg-white text-gray-800"
+        className="w-full bg-white p-4 text-gray-800"
       >
         <ol className="flex h-8 space-x-2">
           <li className="flex items-center">
@@ -156,7 +157,7 @@ const RoomDetails = ({ params }) => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
-                className="w-5 h-5 pr-1 text-gray-600"
+                className="h-5 w-5 pr-1 text-gray-600"
               >
                 <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
               </svg>
@@ -168,7 +169,7 @@ const RoomDetails = ({ params }) => {
               viewBox="0 0 32 32"
               aria-hidden="true"
               fill="currentColor"
-              className="w-2 h-2 mt-1 transform rotate-90 fill-current text-gray-400"
+              className="mt-1 h-2 w-2 rotate-90 transform fill-current text-gray-400"
             >
               <path d="M32 30.031h-32l16-28.061z"></path>
             </svg>
@@ -186,7 +187,7 @@ const RoomDetails = ({ params }) => {
               viewBox="0 0 32 32"
               aria-hidden="true"
               fill="currentColor"
-              className="w-2 h-2 mt-1 transform rotate-90 fill-currenttext-gray-400"
+              className="fill-currenttext-gray-400 mt-1 h-2 w-2 rotate-90 transform"
             >
               <path d="M32 30.031h-32l16-28.061z"></path>
             </svg>
@@ -204,7 +205,7 @@ const RoomDetails = ({ params }) => {
               viewBox="0 0 32 32"
               aria-hidden="true"
               fill="currentColor"
-              className="w-2 h-2 mt-1 transform rotate-90 fill-current text-gray-400"
+              className="mt-1 h-2 w-2 rotate-90 transform fill-current text-gray-400"
             >
               <path d="M32 30.031h-32l16-28.061z"></path>
             </svg>
@@ -217,11 +218,11 @@ const RoomDetails = ({ params }) => {
         {loading === true ? (
           <div
             role="status"
-            className="items-center place-content-center content-center place-items-center flex"
+            className="flex place-content-center place-items-center content-center items-center"
           >
             <svg
               aria-hidden="true"
-              class="w-8 h-8  animate-spin text-gray-600 fill-blue-600"
+              class="h-8 w-8 animate-spin fill-blue-600 text-gray-600"
               viewBox="0 0 100 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -241,29 +242,31 @@ const RoomDetails = ({ params }) => {
           <a
             rel="noopener noreferrer"
             href="#"
-            className="block max-w-sm gap-3 mx-auto sm:max-w-full   lg:grid lg:grid-cols-12 bg-gray-50"
+            className="mx-auto block max-w-sm gap-3 bg-gray-50 sm:max-w-full lg:grid lg:grid-cols-12"
           >
-            <img
+            <Image
+              width={50}
+              height={50}
               src={data?.image}
               alt=""
-              className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 bg-gray-500"
+              className="h-64 w-full rounded bg-gray-500 object-cover sm:h-96 lg:col-span-7"
             />
-            <div className="p-6 space-y-2 lg:col-span-5">
-              <h3 className="text-2xl font-semibold sm:text-4xl ">
+            <div className="space-y-2 p-6 lg:col-span-5">
+              <h3 className="text-2xl font-semibold sm:text-4xl">
                 {data?.name}
               </h3>
               <span className="text-xs text-gray-600">February 19, 2021</span>
               <p>{data?.description}</p>
               {/* list  */}
               <div>
-                <h3 className="font-semibold text-lg">Amenities:</h3>
+                <h3 className="text-lg font-semibold">Amenities:</h3>
                 <ul className="grid gap-3 md:grid-cols-2 lg:grid-cols-2">
                   {data?.amenities.map((list) => (
-                    <li className="flex items-center space-x-2 " key={list}>
+                    <li className="flex items-center space-x-2" key={list}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 512 512"
-                        className="w-5 h-5 fill-current text-violet-600"
+                        className="h-5 w-5 fill-current text-violet-600"
                       >
                         <path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
                         <polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
@@ -274,7 +277,7 @@ const RoomDetails = ({ params }) => {
                 </ul>
               </div>
               {/* list  */}
-              <h2 className="text-2xl  pt-4 mt-4">${data.price} per Night</h2>
+              <h2 className="mt-4 pt-4 text-2xl">${data.price} per Night</h2>
             </div>
           </a>
         )}
@@ -286,9 +289,9 @@ const RoomDetails = ({ params }) => {
       <div>
         <form
           onSubmit={handleBooking}
-          className="flex flex-col justify-around p-8 bg-gray-300  lg:flex lg:flex-col space-y-4 w-full"
+          className="flex w-full flex-col justify-around space-y-4 bg-gray-300 p-8 lg:flex lg:flex-col"
         >
-          <div className="flex justify-between flex-col lg:flex-row  px-2 items-center gap-4 lg:gap-8  ">
+          <div className="flex flex-col items-center justify-between gap-4 px-2 lg:flex-row lg:gap-8">
             <div>
               <h3>Check In Date</h3>
               <input
@@ -296,23 +299,23 @@ const RoomDetails = ({ params }) => {
                 name="checkIn"
                 defaultValue={currentDate}
                 id="checkIn"
-                className="px-2 py-2  shadow rounded focus:outline-none focus:ring hover:ring focus:ring-opacity-50 bg-gray-100 focus:ring-violet-600 ring-violet-600"
+                className="rounded bg-gray-100 px-2 py-2 shadow ring-violet-600 hover:ring focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-50"
               />
             </div>
-            <h2 className="text-lg font-bold "> To</h2>
+            <h2 className="text-lg font-bold"> To</h2>
             <div>
               <h3>Check Out Date </h3>
               <input
                 type="date"
                 name="checkOut"
                 id="checkOut"
-                className="px-2 py-2 rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 bg-gray-100 focus:ring-violet-600 ring-violet-600"
+                className="rounded bg-gray-100 px-2 py-2 shadow ring-violet-600 hover:ring focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-50"
               />
             </div>
           </div>
           {/* form */}
           <div>
-            <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
+            <div className="col-span-full grid grid-cols-6 gap-4 lg:col-span-3">
               <div className="col-span-full sm:col-span-3">
                 <label htmlFor="firstname" className="text-sm">
                   First name
@@ -321,7 +324,7 @@ const RoomDetails = ({ params }) => {
                   id="firstname"
                   type="text"
                   placeholder="First name"
-                  className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
+                  className="block w-full rounded bg-gray-100 p-2 focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-25"
                 />
               </div>
               <div className="col-span-full sm:col-span-3">
@@ -332,7 +335,7 @@ const RoomDetails = ({ params }) => {
                   id="lastname"
                   type="text"
                   placeholder="Last name"
-                  className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
+                  className="block w-full rounded bg-gray-100 p-2 focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-25"
                 />
               </div>
               <div className="col-span-full sm:col-span-3">
@@ -343,7 +346,7 @@ const RoomDetails = ({ params }) => {
                   id="email"
                   type="email"
                   placeholder="Email"
-                  className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
+                  className="block w-full rounded bg-gray-100 p-2 focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-25"
                 />
               </div>
               <div className="col-span-full sm:col-span-3">
@@ -355,7 +358,7 @@ const RoomDetails = ({ params }) => {
                   type="number"
                   name="phoneNumber"
                   placeholder="phone number"
-                  className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
+                  className="block w-full rounded bg-gray-100 p-2 focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-25"
                 />
               </div>
               <div className="col-span-full sm:col-span-2">
@@ -363,7 +366,7 @@ const RoomDetails = ({ params }) => {
                   Rooms
                 </label>
                 <select
-                  className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
+                  className="block w-full rounded bg-gray-100 p-2 focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-25"
                   required
                   type="text"
                   name="roomsQuantity"
@@ -379,7 +382,7 @@ const RoomDetails = ({ params }) => {
                   Adult
                 </label>
                 <select
-                  className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
+                  className="block w-full rounded bg-gray-100 p-2 focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-25"
                   required
                   type="text"
                   name="adult"
@@ -396,7 +399,7 @@ const RoomDetails = ({ params }) => {
                 </label>
 
                 <select
-                  className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-violet-600 bg-gray-100"
+                  className="block w-full rounded bg-gray-100 p-2 focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-25"
                   required
                   type="text"
                   name="childen"
@@ -414,10 +417,10 @@ const RoomDetails = ({ params }) => {
             </div>
           </div>
 
-          <div className="flex item-center justify-center">
+          <div className="item-center flex justify-center">
             <button
               type="submit"
-              className="w-1/3 mt-8 px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 bg-violet-600 focus:ring-violet-600 hover:ring-violet-600 text-gray-50"
+              className="mt-8 w-1/3 rounded bg-violet-600 px-4 py-2 font-bold text-gray-50 shadow hover:ring hover:ring-violet-600 focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-50"
             >
               Book
             </button>
