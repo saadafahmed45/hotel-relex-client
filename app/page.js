@@ -9,8 +9,10 @@ export default function Home() {
     <>
       {/* <Hero /> */}
       <HeroSwiperSlider />
+
       <Rooms />
-      {/* <Testimonial /> */}
+
+      <Testimonial />
     </>
   );
 }

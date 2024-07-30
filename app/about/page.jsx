@@ -98,6 +98,8 @@ const About = () => {
           </div>
         </div>
       </section>
+      {/* team  */}
+      <HotelTeam />
       {/* about 3nd */}
 
       <div>
@@ -135,9 +137,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
-      {/* team  */}
-      <HotelTeam />
     </div>
   );
 };
