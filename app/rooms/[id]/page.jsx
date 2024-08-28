@@ -274,7 +274,7 @@ const RoomDetails = ({ params }) => {
                 </ul>
               </div>
               {/* list  */}
-              <h2 className="mt-4 pt-4 text-2xl">${data.price} per Night</h2>
+              <h2 className="mt-4 pt-4 text-2xl">${data?.price} per Night</h2>
             </div>
           </a>
         )}
