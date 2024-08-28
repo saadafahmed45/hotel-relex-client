@@ -132,14 +132,14 @@ const RoomDetails = ({ params }) => {
     doc.save("booking-details.pdf");
   };
   return (
-    <div className="space-y-6 px-4 py-16 lg:px-24">
+    <div className="space-y-4 px-4 py-16 lg:px-24">
       {/* breadcrumb */}
-      <button
+      {/* <button
         onClick={generatePDF}
         className="mt-8 w-1/3 rounded bg-violet-600 px-4 py-2 font-bold text-gray-50 shadow hover:ring hover:ring-violet-600 focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-50"
       >
         Generate PDF
-      </button>
+      </button> */}
       <nav
         aria-label="breadcrumb"
         className="w-full bg-white p-4 text-gray-800"
