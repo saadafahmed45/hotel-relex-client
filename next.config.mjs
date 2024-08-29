@@ -6,7 +6,13 @@ const nextConfig = {
         protocol: "https",
         hostname: "images.pexels.com",
         port: "",
-        pathname: "/photos/**",
+        pathname: "/**", // More general to cover all paths
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "/**", // More general to cover all paths
       },
     ],
   },

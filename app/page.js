@@ -5,6 +5,7 @@ import Testimonial from "./components/Testimonial";
 import HeroSwiperSlider from "./components/HeroSwiperSlider";
 import WelcomeSection from "./components/WelcomeSection";
 import FutureSection from "./components/FutureSection";
+import FaqSection from "./components/FaqSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroSwiperSlider />
       <WelcomeSection />
       <Rooms />
+      <FaqSection />
       <FutureSection />
       <Testimonial />
     </>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const RoomsCard = ({ item }) => {
@@ -5,41 +6,31 @@ const RoomsCard = ({ item }) => {
 
   return (
     <>
-      <article className="flex flex-col bg-gray-50 shadow-lg">
+      <article className="flex flex-col rounded-md bg-gray-50 shadow-lg">
         <Link
           rel="noopener noreferrer"
           href={`/rooms/${_id}`}
           aria-label="Te nulla oportere reprimique his dolorum"
         >
-          <img
+          <Image
+            width={100}
+            height={100}
             alt=""
             className="h-52 w-full bg-gray-500 object-cover"
             src={image}
           />
         </Link>
 
-        <div className="flex flex-1 flex-col p-6">
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            aria-label="Te nulla oportere reprimique his dolorum"
-          ></a>
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            className="text-xs uppercase tracking-wider hover:underline dark:text-violet-600"
-          >
-            {/* {location.city} */}
-          </a>
+        <div className="flex flex-1 flex-col space-y-2 p-4">
           <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">
             {name}
           </h3>
-          <p>
+          <p className="text-slate-600">
             {" "}
-            {description.slice(0, 105)}....{" "}
-            <Link className="text-sm text-blue-600" href={`/rooms/${_id}`}>
-              See full
-            </Link>{" "}
+            {description.slice(0, 70)}...{" "}
+            {/* <Link className="text-sm text-blue-600" href={`/rooms/${_id}`}>
+              learn more
+            </Link>{" "} */}
           </p>
           <div className="flex items-center justify-start gap-8">
             <div>

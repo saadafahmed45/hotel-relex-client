@@ -1,3 +1,4 @@
+import Image from "next/image";
 import HotelTeam from "../components/HotelTeam";
 
 const About = () => {
@@ -89,7 +90,9 @@ const About = () => {
           </div>
           <div className="bg-gray-100 lg:w-1/2 xl:w-3/5">
             <div className="flex items-center justify-center p-4 md:p-8 lg:p-12">
-              <img
+              <Image
+                width={400}
+                height={400}
                 src="https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg"
                 alt=""
                 className="aspect-video rounded-lg bg-gray-500 shadow-lg sm:min-h-96"
@@ -105,7 +108,9 @@ const About = () => {
       <div>
         <div className="mx-auto bg-gray-100 p-5 text-gray-800 sm:p-10 md:p-16">
           <div className="mx-auto flex max-w-3xl flex-col overflow-hidden rounded">
-            <img
+            <Image
+              width={200}
+              height={200}
               src="https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg"
               alt=""
               className="h-60 w-full bg-gray-500 sm:h-96"
