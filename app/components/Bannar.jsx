@@ -5,7 +5,9 @@ const Bannar = () => {
     <div className="bg-gray-50 px-8 py-2 text-gray-800">
       <div className="container mx-auto flex items-center justify-center py-2 md:justify-between">
         <div>
-          <span>Get up to 50% off your first order + free shipping,&nbsp;</span>
+          <span>
+            Get up to 50% off your fifgdfgrst order + free shipping,&nbsp;
+          </span>
           <a href="#" rel="noopener noreferrer" className="underline">
             sign up
           </a>
