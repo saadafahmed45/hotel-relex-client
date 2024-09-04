@@ -26,8 +26,9 @@ const HeroSwiperSlider = () => {
           <SwiperSlide>
             <div className="relative">
               <Image
-                width={200}
-                height={200}
+                width={600}
+  height={400}
+                  // priority
                 className="h-screen w-full select-none object-cover"
                 src="https://images.pexels.com/photos/210604/pexels-photo-210604.jpeg"
               />
@@ -36,9 +37,9 @@ const HeroSwiperSlider = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image
-                width={200}
-                height={200}
+            <Image
+                width={600}
+  height={400}
                 className="h-screen w-full select-none object-cover"
                 src="https://images.pexels.com/photos/19075392/pexels-photo-19075392/free-photo-of-deckchairs-by-swimming-pool.jpeg"
                 alt="img"
@@ -47,9 +48,9 @@ const HeroSwiperSlider = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image
-                width={200}
-                height={200}
+        <Image
+                width={600}
+  height={400}
                 className="h-screen w-full select-none object-cover"
                 src="https://images.pexels.com/photos/210265/pexels-photo-210265.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt=""
@@ -58,9 +59,9 @@ const HeroSwiperSlider = () => {
           </SwiperSlide>
           <SwiperSlide>
             <div>
-              <Image
-                width={200}
-                height={200}
+         <Image
+                width={600}
+  height={400}
                 className="h-screen w-full select-none object-cover"
                 src="https://images.pexels.com/photos/10463590/pexels-photo-10463590.jpeg"
                 alt=""

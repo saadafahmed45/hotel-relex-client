@@ -13,8 +13,8 @@ const RoomsCard = ({ item }) => {
           aria-label="Te nulla oportere reprimique his dolorum"
         >
           <Image
-            width={100}
-            height={100}
+            width={600}
+            height={400}
             alt=""
             className="h-52 w-full bg-gray-500 object-cover"
             src={image}
