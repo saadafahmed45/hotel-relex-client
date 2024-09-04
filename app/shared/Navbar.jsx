@@ -108,7 +108,7 @@ const Navbar = () => {
               Login
             </Link>
           </li>
-          <li className="flex">
+          {/* <li className="flex">
             <Link
               rel="noopener noreferrer"
               href={"/dashboard"}
@@ -118,7 +118,7 @@ const Navbar = () => {
             >
               Dashboard
             </Link>
-          </li>
+          </li> */}
         </ul>
         <button
           className="flex justify-end p-4 md:hidden"
