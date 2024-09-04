@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import DashboardLayout from "../dashboard/layout";
+import DashWlc from "../components/DashWlc";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -38,6 +40,13 @@ const Navbar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [handleScroll]);
+
+  if (pathname.includes("dashboard"))
+    return (
+      <div>
+        <DashWlc />
+      </div>
+    );
 
   return (
     <header

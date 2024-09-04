@@ -133,7 +133,7 @@ const RoomDetails = ({ params }) => {
     doc.save("booking-details.pdf");
   };
   return (
-    <div className="space-y-4 px-4 py-16 lg:px-24">
+    <div className="space-y-2 px-4 py-16 lg:px-24">
       {/* breadcrumb */}
       {/* <button
         onClick={generatePDF}
