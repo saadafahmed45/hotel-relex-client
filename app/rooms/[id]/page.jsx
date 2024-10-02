@@ -244,9 +244,9 @@ const RoomDetails = ({ params }) => {
             href="#"
             className="mx-auto block max-w-sm gap-3 bg-gray-50 sm:max-w-full lg:grid lg:grid-cols-12"
           >
-            <Image
-              width={100}
-              height={100}
+            <img
+              // width={100}
+              // height={100}
               src={data?.image}
               alt=""
               className="h-64 w-full rounded bg-gray-500 object-cover sm:h-96 lg:col-span-7"
@@ -368,15 +368,16 @@ const RoomDetails = ({ params }) => {
                 <select
                   className="block w-full rounded bg-gray-100 p-2 focus:outline-none focus:ring focus:ring-violet-600 focus:ring-opacity-25"
                   required
-                  type="text"
                   name="roomsQuantity"
+                  defaultValue="1"
                 >
-                  <option selected>1 Room </option>
-                  <option>2 Rooms </option>
-                  <option>3 Rooms </option>
-                  <option>4 Rooms </option>
+                  <option value="1">1 Room</option>
+                  <option value="2">2 Rooms</option>
+                  <option value="3">3 Rooms</option>
+                  <option value="4">4 Rooms</option>
                 </select>
               </div>
+
               <div className="col-span-full sm:col-span-2">
                 <label htmlFor="city" className="text-sm">
                   Adult

@@ -6,7 +6,7 @@ const RoomsCard = ({ item }) => {
 
   return (
     <>
-      <article className="flex flex-col rounded-md bg-gray-50 shadow-lg">
+      <article className="flex flex-col rounded-lg bg-gray-50 shadow-lg">
         <Link
           rel="noopener noreferrer"
           href={`/rooms/${_id}`}
@@ -32,18 +32,21 @@ const RoomsCard = ({ item }) => {
               learn more
             </Link>{" "} */}
           </p>
-          <div className="flex items-center justify-start gap-8">
+          <div className="flex items-center justify-between gap-8">
             <div>
-              <Link
-                className="bg-violet-600 px-5 py-3 text-lg text-white hover:bg-slate-800"
-                href={`/rooms/${_id}`}
-              >
-                Book
-              </Link>
+              <h3 className="text-[22px] font-semibold text-slate-800">
+                {" "}
+                ${price}
+              </h3>
+              <span className="text-[12px]">per night</span>
             </div>
             <div>
-              <h3 className="text-[22px] text-slate-800"> ${price}</h3>
-              <span className="text-[12px]">per night</span>
+              <Link
+                className="rounded-md bg-violet-600 px-4 py-3 text-lg text-white hover:bg-slate-800"
+                href={`/rooms/${_id}`}
+              >
+                View
+              </Link>
             </div>
           </div>
         </div>
