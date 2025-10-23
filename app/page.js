@@ -6,6 +6,7 @@ import HeroSwiperSlider from "./components/HeroSwiperSlider";
 import WelcomeSection from "./components/WelcomeSection";
 import FutureSection from "./components/FutureSection";
 import FaqSection from "./components/FaqSection";
+import FeatureRooms from "./components/FeatureRooms";
 
 export default function Home() {
   return (
@@ -13,7 +14,8 @@ export default function Home() {
       {/* <Hero /> */}
       <HeroSwiperSlider />
       <WelcomeSection />
-      <Rooms />
+      {/* <Rooms /> */}
+      <FeatureRooms />
       <FaqSection />
       <FutureSection />
       <Testimonial />

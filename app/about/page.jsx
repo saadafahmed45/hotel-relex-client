@@ -4,144 +4,107 @@ import HotelTeam from "../components/HotelTeam";
 const About = () => {
   return (
     <div className="about">
-      <div className="flex h-[30vh] items-center justify-center bg-about-image bg-cover bg-fixed bg-center lg:h-[70vh]">
-        <h1 className="text-5xl text-white shadow-lg">About Us</h1>
+      {/* ===== HERO SECTION ===== */}
+      <div className="flex h-[40vh] items-center justify-center bg-about-image bg-cover bg-fixed bg-center lg:h-[70vh]">
+        <h1 className="text-4xl font-bold text-white shadow-md drop-shadow-lg md:text-6xl">
+          About Us
+        </h1>
       </div>
-      {/* about 2nd  */}
-      <section className="bg-gray-100 py-8 text-gray-800">
-        <div className="container mx-auto flex flex-col-reverse lg:flex-row">
-          <div className="flex flex-col space-y-6 rounded-sm bg-violet-600 px-6 py-8 text-gray-50 sm:p-8 lg:w-1/2 lg:p-12 xl:w-2/5">
-            <div className="flex space-x-2 sm:space-x-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="h-6 w-6 flex-shrink-0"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                ></path>
-              </svg>
-              <div className="space-y-2">
-                <p className="text-lg font-medium leading-snug">
-                  Patara Luxury Hotel
-                </p>
-                <p className="leading-snug">
-                  Welcome to the best five-star deluxe hotel in New York. The in
-                  hotel elementum sesue the aucan vestibulum aliquam ustona
-                  sapien rutrum volutpat onec in quis the veliten.
-                </p>
+
+      {/* ===== ABOUT INFO SECTION ===== */}
+      <section className="bg-gray-100 py-16 text-gray-800">
+        <div className="container mx-auto flex flex-col-reverse items-center gap-10 px-6 lg:flex-row lg:gap-16">
+          {/* Left: Info */}
+          <div className="flex flex-col space-y-8 rounded-lg bg-violet-600 p-8 text-gray-50 shadow-lg lg:w-1/2">
+            {[
+              {
+                title: "Patara Luxury Hotel",
+                desc: "Welcome to the best five-star deluxe hotel in New York. Experience unmatched comfort and luxury designed for your perfect stay.",
+              },
+              {
+                title: "World-Class Services",
+                desc: "Enjoy our premium dining, spa treatments, and concierge services tailored to meet your expectations.",
+              },
+              {
+                title: "Unforgettable Experiences",
+                desc: "From scenic views to exceptional hospitality — every moment at Patara Luxury Hotel is crafted for your memories.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="flex items-start space-x-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  className="h-7 w-7 flex-shrink-0 text-white"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                  />
+                </svg>
+                <div>
+                  <p className="text-lg font-semibold">{item.title}</p>
+                  <p className="text-sm text-gray-100">{item.desc}</p>
+                </div>
               </div>
-            </div>
-            <div className="flex space-x-2 sm:space-x-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="h-6 w-6 flex-shrink-0"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                ></path>
-              </svg>
-              <div className="space-y-2">
-                <p className="text-lg font-medium leading-snug">
-                  Lorem ipsum dolor sit amet
-                </p>
-                <p className="leading-snug">
-                  Praesentium ea et neque distinctio quas eius repudiandae
-                  quaerat obcaecati voluptatem similique!
-                </p>
-              </div>
-            </div>
-            <div className="flex space-x-2 sm:space-x-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="h-6 w-6 flex-shrink-0"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                ></path>
-              </svg>
-              <div className="space-y-2">
-                <p className="text-lg font-medium leading-snug">
-                  Lorem ipsum dolor sit amet
-                </p>
-                <p className="leading-snug">
-                  Praesentium ea et neque distinctio quas eius repudiandae
-                  quaerat obcaecati voluptatem similique!
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
-          <div className="bg-gray-100 lg:w-1/2 xl:w-3/5">
-            <div className="flex items-center justify-center p-4 md:p-8 lg:p-12">
-              <Image
-                width={400}
-                height={400}
-                src="https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg"
-                alt=""
-                className="aspect-video rounded-lg bg-gray-500 shadow-lg sm:min-h-96"
-              />
+
+          {/* Right: Image */}
+          <div className="lg:w-1/2">
+            <div className="flex items-center justify-center p-4">
+              <div className="relative aspect-[4/3] w-full max-w-lg overflow-hidden rounded-lg shadow-md">
+                <Image
+                  src="https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                  alt="Hotel interior"
+                  fill
+                  className="object-cover transition-transform duration-700 hover:scale-105"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
-      {/* team  */}
-      <HotelTeam />
-      {/* about 3nd */}
 
-      <div>
-        <div className="mx-auto bg-gray-100 p-5 text-gray-800 sm:p-10 md:p-16">
-          <div className="mx-auto flex max-w-3xl flex-col overflow-hidden rounded">
-            <Image
-              width={200}
-              height={200}
-              src="https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg"
-              alt=""
-              className="h-60 w-full bg-gray-500 sm:h-96"
-            />
-            <div className="m-4 mx-auto -mt-16 space-y-6 bg-gray-50 p-6 pb-12 sm:mx-12 sm:px-10 lg:max-w-2xl lg:rounded-md">
-              <div className="space-y-2">
-                <a
-                  rel="noopener noreferrer"
-                  href="#"
-                  className="inline-block text-2xl font-semibold sm:text-3xl"
-                >
-                  The Best Activewear from the Nordstrom Anniversary Sale
-                </a>
-                <p className="text-xs text-gray-600">
-                  By
-                  <a
-                    rel="noopener noreferrer"
-                    href="#"
-                    className="text-xs hover:underline"
-                  >
-                    Leroy Jenkins
-                  </a>
-                </p>
-              </div>
-              <div className="text-gray-800">
-                <p>Insert the actual text content here...</p>
-              </div>
+      {/* ===== TEAM SECTION ===== */}
+      <HotelTeam />
+
+      {/* ===== BLOG / STORY SECTION ===== */}
+      <section className="bg-gray-100 py-16 text-gray-800">
+        <div className="container mx-auto max-w-4xl px-6">
+          <div className="overflow-hidden rounded-lg bg-white shadow-md">
+            <div className="relative h-72 w-full sm:h-96">
+              <Image
+                src="https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Hotel blog cover"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-8">
+              <h2 className="mb-3 text-2xl font-semibold text-gray-800 sm:text-3xl">
+                The Best Luxury Experience Awaits You
+              </h2>
+              <p className="mb-4 text-sm text-gray-500">
+                By{" "}
+                <span className="font-medium text-violet-600">
+                  Leroy Jenkins
+                </span>
+              </p>
+              <p className="text-gray-600">
+                At Patara Luxury Hotel, every guest enjoys an unforgettable stay
+                featuring breathtaking views, modern amenities, and world-class
+                service. From our rooftop dining to our spa retreats, we ensure
+                each moment becomes a cherished memory.
+              </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
