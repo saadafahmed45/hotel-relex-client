@@ -1,30 +1,35 @@
-# Welcome to Hotel Relex Online Booking Platform
-Experience the luxury and comfort of [Hotel Relex] with our easy-to-use online booking application. Our platform provides a seamless experience, allowing you to:
+# 🏨 Hotel Relex – Premium Online Booking Platform
 
-Browse and book rooms with ease.
-View detailed information and photos of each room.
-Check availability in real time.
-Securely make reservations and payments.
-Access exclusive deals and promotions.
-Whether you’re planning a business trip, a family vacation, or a romantic getaway, Hotel Relex promises an unforgettable stay. Book your perfect room today and enjoy the finest hospitality.
+Experience luxury, comfort, and seamless hospitality. Hotel Relex is a fully featured, modern web application engineered to deliver an effortless room reservation and hospitality management experience. 
 
-### Live site : https://hotel-relex.vercel.app/
+🌐 **Live Demo:** [hotel-relex.vercel.app](https://hotel-relex.vercel.app/)
 
-## Contributors
-  [![Star on GitHub](https://img.shields.io/github/stars/saadafahmed45/hotel-relex-client.svg?style=social)](https://github.com/saadafahmed45/hotel-relex-client/stargazers)
- <table>
-  <tbody>
-    <tr>
-      <td align="center">
-        <img src="https://avatars.githubusercontent.com/u/71249987?v=3?s=100" width="100px;" alt="Its Md Yousuf"/> </br>
-        <a href="https://github.com/yousufislamme">Its Md Yousuf</a> 
-      </td>   
-      <td align="center">
-        <img src="https://avatars.githubusercontent.com/u/73881636?v=3?s=100" width="100px;" alt="Saadaf"/> </br>
-        <a href="https://github.com/saadafahmed45">Saadaf</a>
-      </td>   
-       
-  
- 
-  </tbody>
- </table>
+---
+
+## ✨ Key Features
+
+* **Real-Time Room Availability:** Dynamically track and verify room availability to prevent double-bookings.
+* **Seamless Reservation Workflow:** An intuitive, step-by-step room browsing, selection, and booking pipeline.
+* **Detailed Room Showcase:** High-fidelity media galleries, comprehensive descriptions, and amenitiy checklists for every room tier.
+* **Secure Payment Processing:** Integrated transaction handling to ensure secure reservations and user peace of mind.
+* **Exclusive Deals & Promotions:** Dynamic pricing displays highlighting active offers, seasonal discounts, and packages.
+* **Fully Responsive UI:** A tailored, elegant design optimized flawlessly for smartphones, tablets, and desktop displays.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend Framework:** [Next.js](https://nextjs.org/) / [React](https://react.dev/)
+* **Styling & UI:** [Tailwind CSS](https://tailwindcss.com/)
+* **Deployment & Hosting:** [Vercel](https://vercel.com/)
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to set up and run the client application locally.
+
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/saadafahmed45/hotel-relex-client.git](https://github.com/saadafahmed45/hotel-relex-client.git)
+cd hotel-relex-client
