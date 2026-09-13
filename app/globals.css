@@ -2,23 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
+@layer base {
+  :root {
+    --bg-ivory: #FAF8F5;
+    --bg-surface: #FFFFFF;
+    --bg-stone: #F2EFEA;
+    --bg-stone-dark: #E4DED4;
+    --color-charcoal: #121316;
+    --color-charcoal-muted: #66635F;
+    --color-gold: #C5A880;
+    --color-gold-dark: #A5865E;
+    --color-gold-subtle: #F4EEE6;
   }
 
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+  html {
+    scroll-behavior: smooth;
+    background-color: #FAF8F5;
+    color: #121316;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    background-color: #FAF8F5;
+    color: #121316;
+    overflow-x: hidden;
+    selection-background-color: #C5A880;
+    selection-color: #FFFFFF;
+  }
+
+  ::selection {
+    background-color: #C5A880;
+    color: #FFFFFF;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #F4F0E8;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #C4BCAC;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9E9584;
   }
 }
 
-.animate-fadeInUp {
-  animation: fadeInUp 1s ease forwards;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-heading {
+    font-family: var(--font-cormorant), 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+
+  .font-subheading {
+    font-family: var(--font-inter), sans-serif;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .backdrop-blur-luxury {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
 }
 
-.animate-fadeInUp.delay-200 {
-  animation-delay: 0.2s;
+/* Image zoom transition */
+.image-zoom-container {
+  overflow: hidden;
+}
+
+.image-zoom-container img {
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.image-zoom-container:hover img {
+  transform: scale(1.06);
 }

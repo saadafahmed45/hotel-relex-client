@@ -1,112 +1,125 @@
+import React from "react";
 import Image from "next/image";
-import HotelTeam from "../components/HotelTeam";
+import Link from "next/link";
+import { Sparkles, ArrowRight, ShieldCheck, HeartHandshake, Compass, Award } from "lucide-react";
+import BookingCTA from "../components/BookingCTA";
 
-const About = () => {
+export const metadata = {
+  title: "About Us | Hotel Relex Heritage & Philosophy",
+  description:
+    "Learn about the philosophy, architectural vision, and bespoke hospitality standards that make Hotel Relex a destination of quiet luxury.",
+};
+
+export default function AboutPage() {
+  const pillars = [
+    {
+      icon: Compass,
+      title: "Architectural Harmony",
+      desc: "Designed to blend with the natural topography, using raw limestone, warm oak, and acoustic craftsmanship.",
+    },
+    {
+      icon: HeartHandshake,
+      title: "Intuitive Hospitality",
+      desc: "Service that anticipates desires before they are spoken, delivered with genuine warmth and discretion.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Sustainable Sanctuary",
+      desc: "Zero-single-use plastics, organic coastal sourcing, solar energy integration, and local artisan patronage.",
+    },
+    {
+      icon: Award,
+      title: "Culinary Distinction",
+      desc: "Award-winning gastronomic curation highlighting organic micro-farms and regional coastal fisheries.",
+    },
+  ];
+
   return (
-    <div className="about">
-      {/* ===== HERO SECTION ===== */}
-      <div className="flex h-[40vh] items-center justify-center bg-about-image bg-cover bg-fixed bg-center lg:h-[70vh]">
-        <h1 className="text-4xl font-bold text-white shadow-md drop-shadow-lg md:text-6xl">
-          About Us
-        </h1>
+    <div className="pt-28 pb-20 bg-ivory">
+      {/* Hero Banner */}
+      <div className="relative h-[45vh] lg:h-[60vh] flex items-center justify-center overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2400&q=90"
+          alt="Hotel Relex Architecture"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/60 to-charcoal-950/40" />
+
+        <div className="relative z-10 text-center px-6 max-w-3xl space-y-4">
+          <span className="text-xs font-subheading tracking-[0.25em] text-gold font-semibold uppercase block">
+            OUR STORY & HERITAGE
+          </span>
+          <h1 className="font-serif text-4xl sm:text-6xl text-white font-normal leading-tight">
+            The Philosophy of Quiet Luxury
+          </h1>
+        </div>
       </div>
 
-      {/* ===== ABOUT INFO SECTION ===== */}
-      <section className="bg-gray-100 py-16 text-gray-800">
-        <div className="container mx-auto flex flex-col-reverse items-center gap-10 px-6 lg:flex-row lg:gap-16">
-          {/* Left: Info */}
-          <div className="flex flex-col space-y-8 rounded-lg bg-violet-600 p-8 text-gray-50 shadow-lg lg:w-1/2">
-            {[
-              {
-                title: "Patara Luxury Hotel",
-                desc: "Welcome to the best five-star deluxe hotel in New York. Experience unmatched comfort and luxury designed for your perfect stay.",
-              },
-              {
-                title: "World-Class Services",
-                desc: "Enjoy our premium dining, spa treatments, and concierge services tailored to meet your expectations.",
-              },
-              {
-                title: "Unforgettable Experiences",
-                desc: "From scenic views to exceptional hospitality — every moment at Patara Luxury Hotel is crafted for your memories.",
-              },
-            ].map((item, i) => (
-              <div key={i} className="flex items-start space-x-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="h-7 w-7 flex-shrink-0 text-white"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                  />
-                </svg>
-                <div>
-                  <p className="text-lg font-semibold">{item.title}</p>
-                  <p className="text-sm text-gray-100">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+      {/* Narrative Section */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="lg:col-span-6 space-y-6">
+            <span className="text-xs font-subheading tracking-[0.25em] text-gold font-semibold uppercase block">
+              SANCTUARY VISION
+            </span>
+            <h2 className="font-serif text-3xl sm:text-5xl text-charcoal font-normal leading-[1.15]">
+              A sanctuary where <br />
+              <span className="italic">time slows down.</span>
+            </h2>
+            <p className="text-charcoal-muted text-sm sm:text-base font-light leading-relaxed">
+              Founded with the conviction that true luxury is neither loud nor hurried, Hotel Relex was crafted as a refuge of contemplation, sensory indulgence, and effortless comfort.
+            </p>
+            <p className="text-charcoal-muted text-sm sm:text-base font-light leading-relaxed">
+              Situated along an untouched expanse of dramatic shoreline, every corridor, courtyard, and suite was positioned to capture the shifting tones of dawn and twilight. Our architectural team utilized limestone from regional quarries, bespoke brushed bronze fixtures, and tactile Belgian linens to ground the spaces in enduring tranquility.
+            </p>
           </div>
 
-          {/* Right: Image */}
-          <div className="lg:w-1/2">
-            <div className="flex items-center justify-center p-4">
-              <div className="relative aspect-[4/3] w-full max-w-lg overflow-hidden rounded-lg shadow-md">
-                <Image
-                  src="https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                  alt="Hotel interior"
-                  fill
-                  className="object-cover transition-transform duration-700 hover:scale-105"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== TEAM SECTION ===== */}
-      <HotelTeam />
-
-      {/* ===== BLOG / STORY SECTION ===== */}
-      <section className="bg-gray-100 py-16 text-gray-800">
-        <div className="container mx-auto max-w-4xl px-6">
-          <div className="overflow-hidden rounded-lg bg-white shadow-md">
-            <div className="relative h-72 w-full sm:h-96">
+          <div className="lg:col-span-6">
+            <div className="relative aspect-[4/5] w-full rounded-sm overflow-hidden border border-stone-200 shadow-2xl">
               <Image
-                src="https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Hotel blog cover"
+                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85"
+                alt="Hotel Relex courtyard and reflecting pool"
                 fill
                 className="object-cover"
               />
             </div>
-            <div className="p-8">
-              <h2 className="mb-3 text-2xl font-semibold text-gray-800 sm:text-3xl">
-                The Best Luxury Experience Awaits You
-              </h2>
-              <p className="mb-4 text-sm text-gray-500">
-                By{" "}
-                <span className="font-medium text-violet-600">
-                  Leroy Jenkins
-                </span>
-              </p>
-              <p className="text-gray-600">
-                At Patara Luxury Hotel, every guest enjoys an unforgettable stay
-                featuring breathtaking views, modern amenities, and world-class
-                service. From our rooftop dining to our spa retreats, we ensure
-                each moment becomes a cherished memory.
-              </p>
-            </div>
           </div>
         </div>
-      </section>
+
+        {/* Pillars Grid */}
+        <div className="pt-24 space-y-12">
+          <div className="text-center max-w-xl mx-auto space-y-3">
+            <span className="text-xs font-subheading tracking-[0.25em] text-gold font-semibold uppercase block">
+              FOUNDATIONAL VALUES
+            </span>
+            <h3 className="font-serif text-3xl sm:text-4xl text-charcoal font-normal">
+              What Defines Hotel Relex
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {pillars.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-8 bg-white border border-stone-200 rounded-sm shadow-sm hover:shadow-lg transition space-y-4"
+                >
+                  <div className="w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center text-gold">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h4 className="font-serif text-xl font-semibold text-charcoal">{item.title}</h4>
+                  <p className="text-xs text-charcoal-muted leading-relaxed font-light">{item.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <BookingCTA />
     </div>
   );
-};
-
-export default About;
+}

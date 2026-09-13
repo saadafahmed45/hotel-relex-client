@@ -1,175 +1,92 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Sparkles } from "lucide-react";
 
-const WelcomeSection = () => {
+export default function WelcomeSection() {
   return (
-    <div>
-      <section className="bg-white text-gray-800">
-        <div className="container space-y-2 px-4 py-6 lg:px-16 lg:py-12">
-          {/* grid main  */}
-          <div className="grid-col-12 grid space-x-4 space-y-4 p-2 lg:grid-cols-3">
-            {/* wc text  */}
-            <div>
-              <h1 className="border-b border-purple-700 p-2">Welcome to </h1>
+    <section id="about" className="py-24 lg:py-36 bg-ivory overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* LEFT: Large Luxury Architectural Image */}
+          <div className="lg:col-span-6 relative">
+            <div className="relative aspect-[4/5] w-full max-w-lg mx-auto lg:max-w-none overflow-hidden rounded-sm shadow-2xl border border-stone-200 image-zoom-container">
+              <Image
+                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=85"
+                alt="Hotel Relex Architecture and Tranquil Pool"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
             </div>
-            {/* wlc content  */}
-            <div className="space-y-4">
-              <h2 className="text-4xl">Hotel Relex</h2>
-              <p className="space-y-2">
-                Welcome to the best five-star deluxe hotel in New York. The in
-                hotel elementum sesue the aucan vestibulum aliquam ustona sapien
-                rutrum volutpat onec in quis the veliten.{" "}
-              </p>
-              <br />{" "}
-              <span>
-                Hotel in the miss drana varius natoque penatibus et magnis
-                silver miss parturient monte nascete morbine.
-              </span>
-              <br />
-              <p>
-                Hotel ut nislan quam nestibulum ac quam nec odio elementum
-                sceisue the aucan ligula. Orci varius natoque penatibus et
-                magnis dis parturient monte nascete morbine
-              </p>
-              {/* rating card  */}
-            </div>
-            {/* wlc photo grid  */}
-            <div>
-              <div className="flex max-w-xl flex-col rounded-xl bg-gray-50 p-8 text-gray-800 shadow-sm lg:p-12">
-                <div className="flex w-full flex-col">
-                  <h2 className="text-center text-3xl font-semibold">
-                    Customer reviews
-                  </h2>
-                  <div className="mb-1 mt-2 flex flex-wrap items-center space-x-2">
-                    <div className="flex">
-                      <button
-                        type="button"
-                        title="Rate 1 stars"
-                        aria-label="Rate 1 stars"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          className="h-6 w-6 text-purple-700"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                        </svg>
-                      </button>
-                      <button
-                        type="button"
-                        title="Rate 2 stars"
-                        aria-label="Rate 2 stars"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          className="h-6 w-6 text-purple-700"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                        </svg>
-                      </button>
-                      <button
-                        type="button"
-                        title="Rate 3 stars"
-                        aria-label="Rate 3 stars"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          className="h-6 w-6 text-purple-700"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                        </svg>
-                      </button>
-                      <button
-                        type="button"
-                        title="Rate 4 stars"
-                        aria-label="Rate 4 stars"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          className="h-6 w-6 text-gray-400"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                        </svg>
-                      </button>
-                      <button
-                        type="button"
-                        title="Rate 5 stars"
-                        aria-label="Rate 5 stars"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          className="h-6 w-6 text-gray-400"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                        </svg>
-                      </button>
-                    </div>
-                    <span className="text-gray-600">3 out of 5</span>
-                  </div>
-                  <p className="text-sm text-gray-600">861 global ratings</p>
-                  <div className="mt-4 flex flex-col">
-                    <div className="flex items-center space-x-1">
-                      <span className="w-12 flex-shrink-0 text-sm">5 star</span>
-                      <div className="h-4 flex-1 overflow-hidden rounded-sm bg-gray-300">
-                        <div className="h-4 w-5/6 bg-purple-500"></div>
-                      </div>
-                      <span className="w-12 flex-shrink-0 text-right text-sm">
-                        83%
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <span className="w-12 flex-shrink-0 text-sm">4 star</span>
-                      <div className="h-4 flex-1 overflow-hidden rounded-sm bg-gray-300">
-                        <div className="h-4 w-4/6 bg-purple-500"></div>
-                      </div>
-                      <span className="w-12 flex-shrink-0 text-right text-sm">
-                        67%
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <span className="w-12 flex-shrink-0 text-sm">3 star</span>
-                      <div className="h-4 flex-1 overflow-hidden rounded-sm bg-gray-300">
-                        <div className="h-4 w-3/6 bg-purple-500"></div>
-                      </div>
-                      <span className="w-12 flex-shrink-0 text-right text-sm">
-                        50%
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <span className="w-12 flex-shrink-0 text-sm">2 star</span>
-                      <div className="h-4 flex-1 overflow-hidden rounded-sm bg-gray-300">
-                        <div className="h-4 w-2/6 bg-purple-500"></div>
-                      </div>
-                      <span className="w-12 flex-shrink-0 text-right text-sm">
-                        33%
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <span className="w-12 flex-shrink-0 text-sm">1 star</span>
-                      <div className="h-4 flex-1 overflow-hidden rounded-sm bg-gray-300">
-                        <div className="h-4 w-1/6 bg-purple-500"></div>
-                      </div>
-                      <span className="w-12 flex-shrink-0 text-right text-sm">
-                        17%
-                      </span>
-                    </div>
-                  </div>
-                </div>
+
+            {/* Subtle floating badge */}
+            <div className="absolute -bottom-6 -right-2 sm:right-6 bg-white p-5 sm:p-6 shadow-xl border border-stone-border max-w-[240px] rounded-sm hidden sm:block">
+              <div className="flex items-center gap-2 text-gold mb-1">
+                <Sparkles className="w-4 h-4" />
+                <span className="text-[10px] font-subheading tracking-[0.2em] font-semibold text-charcoal">
+                  ESTABLISHED 2024
+                </span>
               </div>
+              <p className="font-serif text-sm italic text-charcoal-muted leading-snug">
+                "Where quiet luxury transforms every morning into a peaceful ceremony."
+              </p>
+            </div>
+          </div>
+
+          {/* RIGHT: Editorial Story & Typography */}
+          <div className="lg:col-span-6 space-y-6 lg:pl-6">
+            <div className="space-y-3">
+              <span className="text-xs font-subheading tracking-[0.25em] text-gold font-semibold uppercase block">
+                WELCOME TO HOTEL RELEX
+              </span>
+              <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-charcoal font-normal leading-[1.12]">
+                A stay designed <br className="hidden sm:block" />
+                <span className="italic">around you.</span>
+              </h2>
+            </div>
+
+            <div className="space-y-4 text-charcoal-muted font-light leading-relaxed text-sm sm:text-base">
+              <p>
+                Nestled where majestic coastal horizons meet timeless architectural elegance, Hotel Relex was envisioned as an antidote to the fast-paced modern world. We believe that true luxury lies in simplicity, space, and intuitive attentiveness.
+              </p>
+              <p>
+                Every guest room has been sculpted using tactile stone, brushed bronze, and natural linen, creating a deeply restorative environment. From bespoke morning breakfasts tailored to your dietary wishes to twilight private spa sessions, our team ensures your time with us is seamless and unforgettable.
+              </p>
+            </div>
+
+            {/* Features summary row */}
+            <div className="grid grid-cols-2 gap-6 pt-4 border-t border-stone-border">
+              <div>
+                <span className="font-serif text-2xl sm:text-3xl text-charcoal font-semibold block">
+                  38
+                </span>
+                <span className="text-xs font-subheading tracking-wider text-charcoal-muted uppercase">
+                  Bespoke Suites
+                </span>
+              </div>
+              <div>
+                <span className="font-serif text-2xl sm:text-3xl text-charcoal font-semibold block">
+                  100%
+                </span>
+                <span className="text-xs font-subheading tracking-wider text-charcoal-muted uppercase">
+                  Ocean & Horizon Vistas
+                </span>
+              </div>
+            </div>
+
+            <div className="pt-4">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.2em] font-medium text-charcoal hover:text-gold transition group pb-1 border-b border-charcoal hover:border-gold"
+              >
+                <span>Discover Hotel Relex</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1.5" />
+              </Link>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
-};
-
-export default WelcomeSection;
+}
