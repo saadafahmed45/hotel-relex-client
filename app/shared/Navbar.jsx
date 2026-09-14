@@ -54,6 +54,11 @@ export default function Navbar() {
   // On non-home pages, keep navbar solid ivory for clear contrast
   const showSolidNav = !isHome || isScrolled;
 
+  // Do not render consumer navbar inside the admin dashboard
+  if (pathname?.startsWith("/dashboard")) {
+    return null;
+  }
+
   return (
     <>
       <header
@@ -134,6 +139,16 @@ export default function Navbar() {
               )}
             </div>
 
+            {/* Check Reservation Status */}
+            <Link
+              href="/booking-status"
+              className={`text-xs tracking-widest uppercase transition ${
+                showSolidNav ? "text-charcoal-muted hover:text-charcoal" : "text-white/80 hover:text-white"
+              }`}
+            >
+              Check Status
+            </Link>
+
             {/* Contact Link */}
             <Link
               href="/#contact"
@@ -203,6 +218,14 @@ export default function Navbar() {
                 className="font-serif text-2xl sm:text-3xl text-charcoal hover:text-gold transition flex items-center justify-between border-b border-stone-200 pb-3"
               >
                 <span>About</span>
+                <ChevronRight className="w-5 h-5 text-stone-400" />
+              </Link>
+              <Link
+                href="/booking-status"
+                onClick={() => setMobileMenuOpen(false)}
+                className="font-serif text-2xl sm:text-3xl text-charcoal hover:text-gold transition flex items-center justify-between border-b border-stone-200 pb-3"
+              >
+                <span>Check Booking Status</span>
                 <ChevronRight className="w-5 h-5 text-stone-400" />
               </Link>
             </nav>

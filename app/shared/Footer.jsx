@@ -1,8 +1,18 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Mail, Phone, MapPin, Instagram, Facebook, Youtube, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  // Do not render consumer footer inside the admin dashboard
+  if (pathname?.startsWith("/dashboard")) {
+    return null;
+  }
+
   return (
     <footer id="contact" className="bg-charcoal text-white pt-20 pb-12 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 space-y-16">
@@ -51,6 +61,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/#location" className="hover:text-gold transition">Location & Arrival</Link>
+              </li>
+              <li>
+                <Link href="/booking-status" className="text-gold/90 hover:text-white transition font-normal">Check Booking Status</Link>
               </li>
             </ul>
           </div>

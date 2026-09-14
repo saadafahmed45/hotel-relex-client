@@ -1,23 +1,33 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Users, Bed, Maximize2, ArrowRight, Sparkles } from "lucide-react";
 import { LUXURY_ROOMS } from "../../lib/data";
+import { hotelsData } from "../api/api";
 import BookingModal from "./BookingModal";
 
 export default function RoomsSection() {
+  const [rooms, setRooms] = useState(LUXURY_ROOMS);
   const [selectedRoom, setSelectedRoom] = useState(null);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All");
+
+  useEffect(() => {
+    hotelsData().then((data) => {
+      if (Array.isArray(data) && data.length > 0) {
+        setRooms(data);
+      }
+    });
+  }, []);
 
   const categories = ["All", "Rooms", "Suites", "Signature"];
 
   const filteredRooms =
     activeCategory === "All"
-      ? LUXURY_ROOMS
-      : LUXURY_ROOMS.filter((room) => room.category === activeCategory);
+      ? rooms
+      : rooms.filter((room) => room.category === activeCategory);
 
   const handleQuickBook = (room) => {
     setSelectedRoom(room);
