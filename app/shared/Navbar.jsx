@@ -47,7 +47,7 @@ export default function Navbar() {
     { name: "Dining", href: "/#dining" },
     { name: "Offers", href: "/#offers" },
     { name: "Gallery", href: "/#gallery" },
-    { name: "Location", href: "/#location" },
+    // { name: "Location", href: "/#location" },
   ];
 
   const isHome = pathname === "/";
@@ -218,14 +218,6 @@ export default function Navbar() {
                 className="font-serif text-2xl sm:text-3xl text-charcoal hover:text-gold transition flex items-center justify-between border-b border-stone-200 pb-3"
               >
                 <span>About</span>
-                <ChevronRight className="w-5 h-5 text-stone-400" />
-              </Link>
-              <Link
-                href="/booking-status"
-                onClick={() => setMobileMenuOpen(false)}
-                className="font-serif text-2xl sm:text-3xl text-charcoal hover:text-gold transition flex items-center justify-between border-b border-stone-200 pb-3"
-              >
-                <span>Check Booking Status</span>
                 <ChevronRight className="w-5 h-5 text-stone-400" />
               </Link>
             </nav>
